@@ -1,21 +1,23 @@
 # Filter
 
-**TODO: Add description**
+Implement the *keep* and *discard* operation on collections. Given a collection and a predicate on the collection's elements, keep returns a new collection containing those elements where the predicate is true, while discard returns a new collection containing those elements where the predicate is false.
 
-## Installation
+Write two functions that each take a function and a list. One of them will return the list of items for which the passed in function is true, and the other will return the items for which it is false.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `filter` to your list of dependencies in `mix.exs`:
+For example, given the collection of numbers:
 
-```elixir
-def deps do
-  [
-    {:filter, "~> 0.1.0"}
-  ]
-end
-```
+1, 2, 3, 4, 5
+And the predicate:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/filter](https://hexdocs.pm/filter).
+is the number even?
+Then your keep operation should produce:
+
+2, 4
+While your discard operation should produce:
+
+1, 3, 5
+Note that the union of keep and discard is all the elements.
+
+Restrictions
+Keep your hands off that Enum module functionality provided by your standard library (filter/reject/reduce/whatchamacallit)! Solve this one yourself using other basic tools instead.
 

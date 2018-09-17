@@ -15,4 +15,15 @@ defmodule Filter do
   def hello do
     :world
   end
+  
+  def keep(list, condition) do
+    result = []
+    Enum.each list, fn (element) ->
+      if condition.(element) do
+        result ++ element
+      end
+    end
+    result
+  end
+  
 end
