@@ -23,7 +23,14 @@ defmodule Filter do
         result ++ element
       end
     end
-    result
   end
   
+  def discard(list, condition) do
+    result = []
+    Enum.each list, fn (element) ->
+      if !condition.(element) do
+        result ++ element
+      end
+    end
+  end
 end
